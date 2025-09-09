@@ -17,15 +17,16 @@ The goal of this assignment was to find and list all possible subdomains of the 
 | **AlterX**    | Generates permutations of discovered subdomains     |
 | **Dnsx**      | Verifies which subdomains are alive (HTTP/DNS probe) |
 
+
 ## 1. Subfinder
 
 **Purpose:**  
 Passive tool to find real subdomains from public data sources.
 
-**Command Used:**
+**Command Used:**  
 ```bash
 subfinder -d testphp.vulnweb.com -o subfinder.txt
-
+```
 **Output File:**
 [subfinder.txt](https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assisgnment%201/Target%201/subfinder.txt)
 
@@ -38,6 +39,7 @@ subfinder -d testphp.vulnweb.com -o subfinder.txt
 *Returned real subdomains like www.testphp.vulnweb.com, blog.testphp.vulnweb.com.
 *Provides a reliable baseline for further enumeration.
 
+
 ## 2. Assetfinder
 
 **Purpose:**
@@ -46,13 +48,20 @@ Finds additional subdomains using different data sources, sometimes missed by ot
 **Command Used:**
 ```bash
 assetfinder --subs-only testphp.vulnweb.com > assetfinder.txt
+```
 
 **Output File:**
-  [assetfinder.txt](https://github.com/BAmisha-CS/Skill-Horizon/main/Subdomain-Enumeration/Target1/assetfinder.txt)
+  [assetfinder.txt](https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assisgnment%201/Target%201/assetfinder.txt)
+
+**Screenshot:**
+<p align="center">
+  <img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assisgnment%201/Target%201/Screenshots/assetfinder_target1.png" width="80%">
+</p>
 
 **Notes:**
 * Adds extra subdomains missed by Subfinder.
 * Ensures a more comprehensive enumeration of the target.
+
 
 ## 3. AlterX
 
@@ -60,23 +69,29 @@ assetfinder --subs-only testphp.vulnweb.com > assetfinder.txt
 AlterX generates possible permutations of discovered subdomains, and DNSX checks which of them are live.
 
 **Command Used:**
-
 ```bash
 cat subfinder.txt assetfinder.txt | alterx -p '{{sub}}-{{word}}.{{suffix}}' -o alterx_permutations.txt
 ```
 
 **Output File:**
-[permutations.txt](https://github.com/BAmisha-CS/Skill-Horizon/main/Subdomain-Enumeration/Target1/permutations.txt) <br>
+[permutations.txt](https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assisgnment%201/Target%201/permutations.txt) <br>
 
-[live_subdomains.txt](https://github.com/BAmisha-CS/Skill-Horizon/main/Subdomain-Enumeration/Target1/live_subdomains.txt)
+[live_subdomains.txt](https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assisgnment%201/Target%201/live_subdomains.txt)
 
 ** Verification (dnsx):**
 
 ```cat alterx_permutations.txt | dnsx -o live_subdomains.txt```
 
+**Screenshot:**
+<p align="center">
+  <img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assisgnment%201/Target%201/Screenshots/alterx_target1.png" width="80%">
+</p>
+
+
 **Notes:**
 * AlterX guessed additional subdomains like blog-dev.testphp.vulnweb.com.
 * DNSX confirmed which guessed subdomains are actually active.
+
 
 ## 4. Summary
 
