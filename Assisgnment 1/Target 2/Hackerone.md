@@ -73,6 +73,10 @@ cat alterx_permutations.txt | dnsx -o live_subdomains.txt
   <img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assisgnment%201/Target%202/Screenshots/alterx_target2.png" width="80%">
 </p>
 
+<p align="center">
+  <img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assisgnment%201/Target%202/Screenshots/live_subdomains2.png" width="80%">
+</p>
+
 **Notes:**
 
 * AlterX successfully generated permutations of discovered subdomains.
