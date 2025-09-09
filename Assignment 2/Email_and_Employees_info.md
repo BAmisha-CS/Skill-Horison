@@ -1,5 +1,5 @@
  
-#  3: Email & Employee Information Gathering (theHarvester)
+#  Email & Employee Information Gathering (theHarvester)
 
 ### Objective :
 The goal of this step is to gather publicly available **emails, employee names, and related hosts** for the target domain.  
