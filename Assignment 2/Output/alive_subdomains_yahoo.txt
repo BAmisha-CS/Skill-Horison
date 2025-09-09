@@ -1,0 +1,3 @@
+# Placeholder for alive subdomains of Yahoo
+
+This file contains a list of alive subdomains for Yahoo.
