@@ -98,7 +98,20 @@ gau yahoo.com > yahoo_urls.txt
 cat outputs/urls.txt | grep "\.js" > yahoo_jsfiles.txt
 ```
 Purpose: Map the organization’s public presence, including LinkedIn employees, Twitter accounts, and GitHub repositories.
----
+
+### 7..URLs & JS Files
+**Commands:**
+```bash
+gau yahoo.com > yahoo_urls.txt
+cat yahoo_urls.txt | grep "\.js" > yahoo_jsfiles.txt
+jsleak yahoo_jsfiles.txt -o yahoo_jsleak.txt
+```
+**Explanation:** Collect URLs: gau retrieves historical URLs from public data sources (like Wayback Machine and URLScan) that reference the target domain.
+
+Extract JS Files: JavaScript files are isolated for further inspection, as they may expose sensitive logic, hardcoded credentials, or API endpoints.
+
+Analyze for Secrets: Tools like jsleak can be used to scan these JS files for secrets or vulnerabilities that might aid an attacker in later stages.
+
 
 ##**Conclusion: Possible Attack Surfaces Identified:**
 
@@ -109,5 +122,4 @@ Passive reconnaissance of yahoo.com revealed:
 * Emails / Employee Info: No publicly exposed employee emails were found; document metadata showed company authorship with no sensitive internal paths.
 * OSINT / Public Profiles: Limited exposure, with only 4 LinkedIn profiles and 2 GitHub repositories linked to the organization.
 
-  
 Key Takeaway: While public information was limited, passive reconnaissance successfully identified external assets and highlighted the organization's strong security posture with minimal sensitive data exposure.
