@@ -1,0 +1,3 @@
+# Placeholder content for merged_subdomains_yahoo.txt
+
+This file is intended to contain merged subdomains for Yahoo.
