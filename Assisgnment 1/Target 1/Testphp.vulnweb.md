@@ -27,7 +27,12 @@ Passive tool to find real subdomains from public data sources.
 subfinder -d testphp.vulnweb.com -o subfinder.txt
 
 **Output File:**
-[subfinder.txt](https://github.com/BAmisha-CS/Skill-Horizon/main/Subdomain-Enumeration/Target1/subfinder.txt)
+[subfinder.txt](https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assisgnment%201/Target%201/subfinder.txt)
+
+**Screenshot:**
+<p align="center">
+  <img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assisgnment%201/Target%201/Screenshots/subfinder_target1.png" width="80%">
+</p>
 
 **Notes:**
 *Returned real subdomains like www.testphp.vulnweb.com, blog.testphp.vulnweb.com.
