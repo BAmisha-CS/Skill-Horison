@@ -1,1 +1,50 @@
 
+#  Passive Footprinting & Reconnaissance of a Web Application
+
+## Objective
+
+This assignment focuses on **passively gathering publicly available information** about a target web application without directly interacting with its servers. The goal is to understand the initial stages of penetration testing and ethical hacking using Kali Linux tools.
+
+## Scope & Guidelines
+
+- **Only legal targets** are allowed (e.g., approved bug bounty domains, test labs, or your own infrastructure).
+- **Do NOT target unauthorized or personal websites.**
+
+## Tasks Breakdown
+
+### Step 1: Domain Information Gathering
+
+- Use `whois`, `dig`, and `nslookup` to collect:
+  - Domain registrar details
+  - DNS records (A, MX, TXT, etc.)
+
+### Step 2: Subdomain Enumeration
+
+Use passive techniques to discover subdomains with:
+
+- `subfinder`
+- `assetfinder`
+- `amass` (in passive mode)
+
+### Step 3: Email & Employee Discovery
+
+- Use `theHarvester` to gather emails, names, and host info from:
+  - Google
+  - Bing
+  - LinkedIn
+  - Other public sources
+
+### Step 4: Metadata Extraction
+
+- Download public files (PDF, DOCX, PPTX) and analyze their metadata using:
+  - `exiftool`
+  - `strings`
+  - `metagoofil`
+
+### Step 5: Google Dorking
+
+Perform passive searches using advanced Google queries:
+
+```bash
+site:example.com filetype:pdf
+site:example.com intitle:"index of"
