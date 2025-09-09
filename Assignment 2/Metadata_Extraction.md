@@ -69,7 +69,7 @@ Extracts all human-readable strings inside the file, which can reveal:
 **Screenshot:**
 
 <p align="center">
-  <img src="ttps://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%202/Screenshots/strings_doc_yahoo.png.png" width="80%">
+  <img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%202/Output/metadata_document_yahoo.txt" width="80%">
 </p>
 
 **Output:**
