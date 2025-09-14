@@ -23,8 +23,11 @@ Check if the target is live and identify its IP address.
 ### 📌 Command
 ```bash
 nmap -sn testfire.net
-
+```
 ### Explanation
 **`-sn`**: Ping Scan only (no port scanning)  
 Used to determine if the host is online and reachable.
 
+Sample Output
+Nmap scan report for testfire.net (192.168.1.10)
+Host is up (0.056s latency).
