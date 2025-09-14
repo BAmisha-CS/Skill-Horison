@@ -151,7 +151,6 @@ active-recon-report/
 │   └── whatweb.txt
 
 ## Key Learnings
-
 - Understood the importance of staged scanning: starting with quick scans and moving to full-range, deeper scans.
 - Learned how to identify live hosts using Nmap’s `-sn` option.
 - Gained hands-on experience with various Nmap scan types:
@@ -164,7 +163,6 @@ active-recon-report/
 - Reinforced the importance of ethical hacking — scanning only authorized targets.
 
 ## Conclusion
-
 - Performed active reconnaissance using authorized tools and techniques.
 - Identified live hosts and discovered open ports and running services.
 - Used Nmap for staged scanning, version detection, and script analysis.
