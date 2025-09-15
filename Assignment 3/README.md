@@ -11,7 +11,6 @@
 | `whatweb`| Web application fingerprinting                                          |
 | `nikto`  | Web vulnerability scanner                                               |
 
-
 ## Step 1: Host Discovery
 ### Objective
 Check if the target is live and identify its IP address.
