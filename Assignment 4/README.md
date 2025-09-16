@@ -55,16 +55,9 @@ nuclei -u http://zero.webappsecurity.com -as -o nuclei.txt -c 10
 `-as`: Enable automatic severity-based filtering
 `-c 10`: Use 10 concurrent threads
 
-#### 2.3 OWASP ZAP Baseline Scan
+#### 2.3 WPScan (Only if WordPress Detected)
 ```
-zap-baseline.py -t http://zero.webappsecurity.com -r zap_baseline.html
-```
-Passive scan only (safe)
-Generates report: `zap_baseline.html`
-
-#### 2.4 WPScan (Only if WordPress Detected)
-```
-wpscan --url http://target.com --enumerate vp,vt,cb,dbe,u --api-token YOUR_TOKEN -o wpscan.txt
+wpscan --url http://zero.webappsecurity.com --enumerate vp,vt,cb,dbe,u --api-token YOUR_TOKEN -o wpscan.txt
 ```
 **Detects:** - Vulnerable plugins/themes
              - User enumeration
@@ -77,30 +70,12 @@ project/
 ├── dirb_zero.txt
 ├── nikto.txt
 ├── nuclei.txt
-├── zap_baseline.html
 ├── wpscan.txt (if applicable)
 └── README.md
 
 ## Notes
 - Always verify tool paths and ensure wordlists are available `(/usr/share/wordlists/)`
 - For faster scans or recursion, consider replacing `dirb` with `gobuster` or `ffuf
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
