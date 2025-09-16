@@ -13,7 +13,7 @@ Passive-Footprinting-And-Recon/
 ├── 03.Email_And_Emloyee_Info.md
 ├── 04.Metadata_Extraction.md
 ├── 05.Google_dorking.md
-├── 06.Social_media_&_OSINT.md
+├── 06.Social_media_&_OSINT.md 
 ├── 
 ├── outputs/               # Raw outputs of commands
 │   ├── whois.txt
