@@ -91,12 +91,13 @@ sudo docker run -v $(pwd):/zap/wrk/:rw --network="host" ghcr.io/zaproxy/zaproxy:
 ```
 wpscan --url http://zero.webappsecurity.com --enumerate vp,vt,cb,dbe,u --api-token YOUR_TOKEN -o wpscan.txt
 ```
+
+**Screenshot:**
+<p align="center"><img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%204/Screenshots/WPScan.png"></p>
+
 **Detects:** - Vulnerable plugins/themes
              - User enumeration
              - Known CVEs
-
-             **Screenshot:**
-<p align="center"><img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%204/Screenshots/WPScan.png"></p>
 
 ## Project Structure
 project/
