@@ -1,1 +1,131 @@
+# Command Injection — DVWA Testing Report
 
+## Overview
+Command Injection vulnerabilities occur when untrusted user input is included in system-level commands without proper validation. This allows attackers to execute arbitrary commands on the server.
+
+DVWA (Damn Vulnerable Web Application) provides a safe environment to explore this vulnerability across various security levels.
+---
+## Environment Details
+- **Target**: DVWA (Damn Vulnerable Web App)
+- **URL**: http://127.0.0.1
+- **OS**: Linux
+- **Browser**: Firefox
+- **Testing Levels**: Low → Medium → High
+
+## DVWA Security Levels and Observations
+| Security Level | What Happens?                                                                 |
+|----------------|--------------------------------------------------------------------------------|
+| **Low**        | No protection. Any user input is passed directly to the system.                |
+| **Medium**     | Some characters are blocked, but tricks (like using `|`) still work.           |
+| **High**       | Input is sanitized. Commands from user input are blocked completely.           |
+---
+
+## Step-by-Step Testing
+### 1. Low Security Level
+- **Action**: Entered this in the input field:
+```
+`127.0.0.1; whoami`
+```
+Explanation:
+- `127.0.0.1` is used for the ping.
+
+; tells the system to run another command: whoami.
+
+Result:
+
+The app runs both commands.
+
+It shows the current system user (like www-data).
+
+Why it's bad:
+
+The attacker can now run any command on the server.
+
+Screenshot: (Insert screenshot here)
+
+
+2. Medium Security Level
+
+Action: Entered this payload:
+
+127.0.0.1 | whoami
+
+
+Explanation:
+
+Some special characters are blocked (like ; or &&).
+
+But using | (pipe) might still allow command injection.
+
+Result:
+
+Command still runs.
+
+Output of whoami is shown.
+
+Why it’s risky:
+
+Even basic filtering can be bypassed with tricks.
+
+Screenshot: (Insert screenshot here)
+
+3. High Security Level
+
+Action: Tried:
+
+127.0.0.1 && whoami
+
+
+Result:
+
+Input is blocked or sanitized.
+
+No second command runs.
+
+Only ping works with the IP.
+
+Conclusion:
+
+The system is safe at this level.
+
+Screenshot: (Insert screenshot here)
+
+
+⚠️ Risk & Impact
+
+If this vulnerability is not fixed:
+
+An attacker can:
+
+Run any command on your server
+
+Read or delete files
+
+Create backdoors
+
+Take full control of the system
+
+Real-world impact: Full Remote Code Execution (RCE) — one of the most dangerous web vulnerabilities.
+
+How to Fix It (Remediation)
+
+Validate all user input
+Only allow IP addresses or specific input formats.
+
+Sanitize the input
+Use built-in security functions to clean the input (e.g., remove dangerous characters).
+
+Avoid passing user input to the system
+Use safe methods to perform tasks — for example, don’t use shell_exec() or system() in PHP.
+
+
+---
+
+### ✅ Summary:
+
+- **Plain English** explanations ✅  
+- **Security levels** explained clearly ✅  
+- **Each test step broken down** ✅  
+- **Fixes and example code included** ✅
+
+Let me know if you want a **matching report format for SQL Injection, XSS**, etc. — I can make them just as clear and structured.
