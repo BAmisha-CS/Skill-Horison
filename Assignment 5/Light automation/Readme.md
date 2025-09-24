@@ -23,7 +23,9 @@ http://127.0.0.1
 ## Commands Used
 1. **Dirb** — Directory & File Bruteforce
 Scans the web root for common files and directories using a predefined wordlist.
+
 `dirb http://127.0.0.1 /usr/share/wordlists/dirb/common.txt -o dirb_dvwa.txt`
+
 - **Wordlist used**: common.txt
 - **Output file**: dirb_dvwa.txt
 
