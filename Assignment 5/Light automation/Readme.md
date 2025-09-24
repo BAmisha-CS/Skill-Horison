@@ -29,6 +29,11 @@ Scans the web root for common files and directories using a predefined wordlist.
 - **Wordlist used**: common.txt
 - **Output file**: dirb_dvwa.txt
 
+  **Screenshot:**
+<p align="center">
+  <img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%205/Light%20automation/Dirb.png">
+</p>
+
 2. **WhatWeb** — Web Technology Fingerprinting
 Identifies technologies and platforms used by the target web application.
 
@@ -39,6 +44,11 @@ Identifies technologies and platforms used by the target web application.
   
 `whatweb -v http://127.0.0.1 > whatweb_dvwa.txt`
 
+**Screenshot:**
+<p align="center">
+  <img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%205/Light%20automation/whatweb.png">
+</p>
+
 3. **Nikto** — Web Server Vulnerability Scanner
 Scans for outdated software, dangerous options, and basic misconfigurations.
 
@@ -46,6 +56,11 @@ Scans for outdated software, dangerous options, and basic misconfigurations.
 
 - **Host**: Local DVWA
 - **Output file**: `nikto_dvwa.txt`
+
+  **Screenshot:**
+<p align="center">
+  <img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%205/Light%20automation/Nikto.png">
+</p>
 
  4. **Nuclei** — Vulnerability Scanner
 Uses predefined templates to find misconfigurations, exposed files, and known CVEs.
@@ -55,6 +70,11 @@ Uses predefined templates to find misconfigurations, exposed files, and known CV
 - **Target Path**:` /dvwa`
 - **Output File**:` ~/nuclei_dvwa.txt (home directory)`
 - **To scan with specific templates**: `nuclei -u http://127.0.0.1/dvwa -t vulnerabilities/ -o ~/nuclei_dvwa.txt`
+
+  **Screenshot:**
+<p align="center">
+  <img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%205/Light%20automation/nuclei.png">
+</p>
 
 ## Output Files
 All tools output to the following files:
