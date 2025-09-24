@@ -18,7 +18,6 @@ DVWA (Damn Vulnerable Web Application) provides a safe environment to explore th
 | **Low**        | No protection. Any user input is passed directly to the system.                |
 | **Medium**     | Some characters are blocked, but tricks (like using `|`) still work.           |
 | **High**       | Input is sanitized. Commands from user input are blocked completely.           |
----
 
 ## Step-by-Step Testing
 ### 1. Low Security Level
@@ -26,106 +25,73 @@ DVWA (Damn Vulnerable Web Application) provides a safe environment to explore th
 ```
 `127.0.0.1; whoami`
 ```
-Explanation:
+**Explanation**:
 - `127.0.0.1` is used for the ping.
+- `;` tells the system to run another command: `whoami`.
 
-; tells the system to run another command: whoami.
+**Result**:
+- The app runs both commands.
+- It shows the current system user (like `www-data`).
 
-Result:
+**Why it's bad**:
+- The attacker can now run any command on the server.
 
-The app runs both commands.
+**Screenshot:**
+<p align="center"><img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%205/Screenshots/Command_Injection_low.png"></p>
 
-It shows the current system user (like www-data).
+### 2. Medium Security Level
+- **Action**: Entered this payload:
+```
+`127.0.0.1 | whoami`
+```
+**Explanation**:
+- Some special characters are blocked (like `;` or `&&`).
+- But using `|` (pipe) might still allow command injection.
 
-Why it's bad:
+**Result**:
+- Command still runs.
+- Output of `whoami` is shown.
 
-The attacker can now run any command on the server.
+**Why it’s risky**:
+- Even basic filtering can be bypassed with tricks.
 
-Screenshot: (Insert screenshot here)
+**Screenshot:**
+<p align="center"><https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%205/Screenshots/Command_Injection_medium.png"></p>
 
+### 3. High Security Level
 
-2. Medium Security Level
-
-Action: Entered this payload:
-
-127.0.0.1 | whoami
-
-
-Explanation:
-
-Some special characters are blocked (like ; or &&).
-
-But using | (pipe) might still allow command injection.
-
-Result:
-
-Command still runs.
-
-Output of whoami is shown.
-
-Why it’s risky:
-
-Even basic filtering can be bypassed with tricks.
-
-Screenshot: (Insert screenshot here)
-
-3. High Security Level
-
-Action: Tried:
-
+**Action: Tried:**
+```
 127.0.0.1 && whoami
+```
+**Result**:
+- Input is blocked or sanitized.
+- No second command runs.
+- Only `ping` works with the IP.
 
+**Conclusion**:
+- The system is safe at this level.
 
-Result:
+**Screenshot:**
+<p align="center"><img src="https://github.com/BAmisha-CS/Skill-Horison/blob/main/Assignment%205/Screenshots/Command_Injection_high.png"></p>
 
-Input is blocked or sanitized.
-
-No second command runs.
-
-Only ping works with the IP.
-
-Conclusion:
-
-The system is safe at this level.
-
-Screenshot: (Insert screenshot here)
-
-
-⚠️ Risk & Impact
-
+## Risk & Impact
 If this vulnerability is not fixed:
+**An attacker can**:
+- Run any command on your server
+- Read or delete files
+- Create backdoors
+- Take full control of the system
 
-An attacker can:
+**Real-world impact**: Full Remote Code Execution (RCE) — one of the most dangerous web vulnerabilities.
 
-Run any command on your server
+**How to Fix It (Remediation)**
+1. **Validate all user input** - Only allow IP addresses or specific input formats.
+2. **Sanitize the input** - Use built-in security functions to clean the input (e.g., remove dangerous characters).
+3. **Avoid passing user input to the system** - Use safe methods to perform tasks — for example, don’t use `shell_exec()` or `system()` in PHP.
 
-Read or delete files
-
-Create backdoors
-
-Take full control of the system
-
-Real-world impact: Full Remote Code Execution (RCE) — one of the most dangerous web vulnerabilities.
-
-How to Fix It (Remediation)
-
-Validate all user input
-Only allow IP addresses or specific input formats.
-
-Sanitize the input
-Use built-in security functions to clean the input (e.g., remove dangerous characters).
-
-Avoid passing user input to the system
-Use safe methods to perform tasks — for example, don’t use shell_exec() or system() in PHP.
-
-
----
-
-### ✅ Summary:
-
-- **Plain English** explanations ✅  
-- **Security levels** explained clearly ✅  
-- **Each test step broken down** ✅  
-- **Fixes and example code included** ✅
-
-Let me know if you want a **matching report format for SQL Injection, XSS**, etc. — I can make them just as clear and structured.
+### **Summary**:
+- **Plain English** explanations   
+- **Security levels** explained clearly   
+- **Each test step broken down** 
+- **Fixes and example code included** 
